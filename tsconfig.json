@@ -1,17 +1,17 @@
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "target": "es2017",
-        "moduleResolution": "node",
-        "types": [
-            "node"
-        ],
-        "outDir": "dist",
-        "sourceMap": true,
-        "esModuleInterop": true,
-        "noImplicitAny": true
-    },
-    "exclude": [
-        "node_modules"
-    ]
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2017",
+    "lib": [
+      "es2017","dom"
+    ],
+    "moduleResolution": "node",
+    "types": [
+      "node"
+    ],
+    "outDir": "dist",
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true
+  }
 }
