@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
-    "lib": [
-      "es2017"
-    ],
     "module": "commonjs",
     "target": "es2017",
     "moduleResolution": "node",
+    "types": [
+      "node"
+    ],
     "outDir": "dist",
     "sourceMap": true,
     "esModuleInterop": true,
-    "noImplicitAny": true,
+    "noImplicitAny": true
   },
   "exclude": [
     "node_modules"

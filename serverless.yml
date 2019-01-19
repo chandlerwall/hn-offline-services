@@ -3,7 +3,6 @@ service:
 
 plugins:
   - serverless-offline
-  - serverless-webpack
 
 provider:
   name: aws
@@ -18,7 +17,7 @@ functions:
           method: get
           path: hello
   hn-api:
-    handler: src/hn-api.hn
+    handler: dist/hn-api.hn
     events:
       - http:
           method: get
