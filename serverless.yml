@@ -2,6 +2,7 @@ service:
   name: hn-offline-services
 
 plugins:
+  - serverless-webpack
   - serverless-offline
 
 provider:
@@ -17,7 +18,7 @@ functions:
           method: get
           path: hello
   hn-api:
-    handler: dist/hn-api.hn
+    handler: src/hn-api.hn
     events:
       - http:
           method: get
