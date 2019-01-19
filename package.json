@@ -4,6 +4,7 @@
   "description": "Serverless webpack example using Typescript",
   "scripts": {
     "compile": "tsc",
+    "compile:watch": "npm run compile -- --watch",
     "predeploy:dev": "npm run compile",
     "deploy:dev": "serverless deploy --stage dev",
     "preoffline": "npm run compile",
