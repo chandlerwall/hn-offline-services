@@ -1,27 +1,27 @@
 {
-    "name": "hn-offline-services",
-    "version": "0.1.0",
-    "description": "Serverless webpack example using Typescript",
-    "scripts": {
-        "compile": "tsc",
-        "predeploy:dev": "npm run compile",
-        "deploy:dev": "serverless deploy --stage dev",
-        "preoffline": "npm run compile",
-        "offline": "serverless offline",
-        "prepacke": "npm run compile",
-        "package": "serverless package"
-    },
-    "dependencies": {
-        "firebase": "^5.8.0"
-    },
-    "devDependencies": {
-        "@types/aws-lambda": "8.10.1",
-        "@types/node": "^8.0.57",
-        "serverless": "^1.36.1",
-        "serverless-offline": "^4.1.4",
-        "source-map-support": "^0.5.6",
-        "typescript": "^3.2.4"
-    },
-    "author": "Chandler Wall",
-    "license": "MIT"
+  "name": "hn-offline-services",
+  "version": "0.1.0",
+  "description": "Serverless webpack example using Typescript",
+  "scripts": {
+    "compile": "tsc",
+    "predeploy:dev": "npm run compile",
+    "deploy:dev": "serverless deploy --stage dev",
+    "preoffline": "npm run compile",
+    "offline": "serverless offline",
+    "prepacke": "npm run compile",
+    "package": "serverless package"
+  },
+  "dependencies": {
+    "firebase": "^5.8.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "8.10.1",
+    "@types/node": "^8.0.57",
+    "serverless": "^1.36.1",
+    "serverless-offline": "^4.1.4",
+    "source-map-support": "^0.5.6",
+    "typescript": "^3.2.4"
+  },
+  "author": "Chandler Wall",
+  "license": "MIT"
 }
