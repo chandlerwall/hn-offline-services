@@ -1,9 +1,11 @@
 service:
   name: hn-offline-services
 
+package:
+  individually: true
+
 plugins:
   - serverless-offline
-  - serverless-webpack
 
 provider:
   name: aws
@@ -12,8 +14,14 @@ provider:
 
 functions:
   hello:
-    handler: src/handler.hello
+    handler: dist/hello.hello
     events:
       - http:
           method: get
           path: hello
+  hn-api:
+    handler: dist/hn-api.hn
+    events:
+      - http:
+          method: get
+          path: hn

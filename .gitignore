@@ -1,7 +1,7 @@
 # IDE directories
 .idea
 
-# package directories
+# Package directories
 node_modules
 jspm_packages
 
@@ -10,3 +10,6 @@ jspm_packages
 
 # Webpack directories
 .webpack
+
+# Build directories
+dist
