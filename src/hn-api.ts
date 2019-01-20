@@ -76,9 +76,10 @@ async function fetchItemById(firebaseApp: App, id: any) {
   console.log(`Finish fetching ${id}`);
 
   let comments: object[] = [];
-  if (item.kids && item.kids.length) {
+  if (item && item.kids && item.kids.length) {
     comments = await Promise.all(item.kids.map((kid: any) => {
       console.log(`Prepare to fetch kid ${kid}`);
+      // TODO - Is there a better way than recursion?
       const kidItem = fetchItemById(firebaseApp, kid);
       console.log(`Finish fetching kid ${kid}`);
       return kidItem;
