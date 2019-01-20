@@ -47,12 +47,7 @@ export async function hn(event: APIGatewayProxyEvent): Promise<APIGatewayProxyRe
   try {
     // TODO - Look for an existing Firebase application before creating a new one.
     app = firebase.initializeApp({databaseURL: API_URL});
-    const db: Database = app.database();
-    const path = `item/${id}`;
-    const item = db.ref(API_VERSION).child(path);
-    const snapshot: DataSnapshot = await item.once("value");
-    // TODO - Check if the requested reference exists. Return 404 if the requested item does not exist.
-    data = snapshot.val();
+    data = await fetchItemById(app, id);
   } catch (error) {
     console.error(error);
   } finally {
@@ -66,5 +61,32 @@ export async function hn(event: APIGatewayProxyEvent): Promise<APIGatewayProxyRe
     statusCode: 200,
     headers: {},
     body: JSON.stringify(data),
+  };
+}
+
+async function fetchItemById(firebaseApp: App, id: any) {
+  const db: Database = firebaseApp.database();
+  const path = `item/${id}`;
+  const itemReference = db.ref(API_VERSION).child(path);
+  console.log(`Start fetching ${id}`);
+  const itemSnapshot: DataSnapshot = await itemReference.once("value");
+  // TODO - Check if the requested reference exists. Return 404 if the requested item does not exist.
+  // TODO - Create a type declaration for an item.
+  const item = itemSnapshot.val();
+  console.log(`Finish fetching ${id}`);
+
+  let comments: object[] = [];
+  if (item.kids && item.kids.length) {
+    comments = await Promise.all(item.kids.map((kid: any) => {
+      console.log(`Prepare to fetch kid ${kid}`);
+      const kidItem = fetchItemById(firebaseApp, kid);
+      console.log(`Finish fetching kid ${kid}`);
+      return kidItem;
+    }));
+  }
+
+  return {
+    item,
+    comments,
   };
 }
