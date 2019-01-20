@@ -1,0 +1,43 @@
+{
+  "resource:": "/api/v1/item/{id}",
+  "path:": "/api/v1/item/12345",
+  "httpMethod:": "GET",
+  "headers:": null,
+  "multiValueHeaders:": null,
+  "queryStringParameters:": null,
+  "multiValueQueryStringParameters:": null,
+  "pathParameters:": {
+    "id:": "12345"
+  },
+  "stageVariables:": null,
+  "requestContext:": {
+    "path:": "/api/v1/item/{id}",
+    "accountId:": "729037857495",
+    "resourceId:": "zuwcux",
+    "stage:": "test-invoke-stage",
+    "domainPrefix:": "testPrefix",
+    "requestId:": "10891e3b-1c4a-11e9-8662-67f5384b099c",
+    "identity:": {
+      "cognitoIdentityPoolId:": null,
+      "cognitoIdentityId:": null,
+      "apiKey:": "test-invoke-api-key",
+      "cognitoAuthenticationType:": null,
+      "userArn:": "arn:aws:sts::729037857495:assumed-role/OrganizationAccountAccessRole/chandler",
+      "apiKeyId:": "test-invoke-api-key-id",
+      "userAgent:": "aws-internal/3 aws-sdk-java/1.11.465 Linux/4.9.137-0.1.ac.218.74.329.metal1.x86_64 OpenJDK_64-Bit_Server_VM/25.192-b12 java/1.8.0_192",
+      "accountId:": "729037857495",
+      "caller:": "AROAJFXXJ5BJW7Q32FK52:chandler",
+      "sourceIp:": "test-invoke-source-ip",
+      "accessKey:": "ASIA2TPQK4LLZJDJIRUX",
+      "cognitoAuthenticationProvider:": null,
+      "user:": "AROAJFXXJ5BJW7Q32FK52:chandler"
+    },
+    "domainName:": "testPrefix.testDomainName",
+    "resourcePath:": "/api/v1/item/{id}",
+    "httpMethod:": "GET",
+    "extendedRequestId:": "Txr6qE39PHcF7Fw=",
+    "apiId:": "jo0norcal4"
+  },
+  "body:": null,
+  "isBase64Encoded:": false
+}

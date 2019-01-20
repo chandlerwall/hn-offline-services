@@ -18,10 +18,10 @@ functions:
     events:
       - http:
           method: get
-          path: hello
+          path: api/v1/meta/health
   hn-api:
     handler: dist/hn-api.hn
     events:
       - http:
           method: get
-          path: hn
+          path: api/v1/item/{id}
