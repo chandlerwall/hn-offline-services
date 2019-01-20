@@ -9,9 +9,37 @@ const API_URL = "https://hacker-news.firebaseio.com";
 const API_VERSION = "/v0";
 
 export async function hn(event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> {
-  console.log(event);
+  let id;
+  // TODO - Create helper/wrapper method to simplify try-catch interactions.
+  try {
+    id = event.pathParameters["id"];
 
-  const id = event.pathParameters["id"];
+    // TODO - Include helper method to validate path parameters.
+    if (id == null) {
+      console.error("Missing path parameter: id");
+
+      // TODO - Create helper method to return consistent responses for various scenarios.
+      return {
+        statusCode: 400,
+        headers: {},
+        body: JSON.stringify({
+          status: "Error",
+          message: "Missing path parameter: id",
+        }),
+      };
+    }
+  } catch (error) {
+    console.error(error);
+    // TODO - Create helper method to return consistent responses for various scenarios.
+    return {
+      statusCode: 400,
+      headers: {},
+      body: JSON.stringify({
+        status: "Error",
+        message: "Unknown error processing path parameters.",
+      }),
+    };
+  }
 
   let app: App;
   let data: any;
@@ -23,6 +51,7 @@ export async function hn(event: APIGatewayProxyEvent): Promise<APIGatewayProxyRe
     const path = `item/${id}`;
     const item = db.ref(API_VERSION).child(path);
     const snapshot: DataSnapshot = await item.once("value");
+    // TODO - Check if the requested reference exists. Return 404 if the requested item does not exist.
     data = snapshot.val();
   } catch (error) {
     console.error(error);
