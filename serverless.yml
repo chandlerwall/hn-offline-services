@@ -19,9 +19,15 @@ functions:
       - http:
           method: get
           path: api/v1/meta/health
-  hn-api:
+  item:
     handler: dist/hn-api.hn
     events:
       - http:
           method: get
           path: api/v1/item/{id}
+  front-page:
+    handler: dist/front-page.frontPage
+    events:
+      - http:
+          method: get
+          path: api/v1/front_page
