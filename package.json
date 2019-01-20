@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "description": "Serverless webpack example using Typescript",
   "scripts": {
+    "lint": "tslint --project .",
     "compile": "tsc",
+    "build": "npm run lint && npm run compile",
     "compile:watch": "npm run compile -- --watch",
-    "predeploy:dev": "npm run compile",
+    "predeploy:dev": "npm run build",
     "deploy:dev": "serverless deploy --stage dev",
     "preoffline": "npm run compile",
     "offline": "serverless offline",
@@ -21,6 +23,7 @@
     "serverless": "^1.36.1",
     "serverless-offline": "^4.1.4",
     "source-map-support": "^0.5.6",
+    "tslint": "^5.12.1",
     "typescript": "^3.2.4"
   },
   "author": "Chandler Wall",

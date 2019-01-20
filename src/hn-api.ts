@@ -12,7 +12,7 @@ export async function hn(event: APIGatewayProxyEvent): Promise<APIGatewayProxyRe
   let id;
   // TODO - Create helper/wrapper method to simplify try-catch interactions.
   try {
-    id = event.pathParameters["id"];
+    id = event.pathParameters.id;
 
     // TODO - Include helper method to validate path parameters.
     if (id == null) {
